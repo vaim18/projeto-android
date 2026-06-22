@@ -1,0 +1,261 @@
+
+/* @charset "UTF-8" = chamador de folha de estilo*/
+
+@charset "UTF-8";
+/* CSS document */
+
+/*
+    em HTML é id = em CSS é # (cerquilha)
+    em HTML é class = em CSS é . (ponto)    
+    em HTML pseudoclasse = em CSS é : (dois pontos)
+    em HTML pseudoelemento = em CSS é :: (duplo dois pontos)
+    em HTML classe filha = em CSS é > (símbolo de maior)
+*/
+
+/*  SELETORS PERSONALIZADOS
+    #   = id
+    .   = class
+    :   = pseudo-class
+    ::  = pseudo-element
+    >   = child combinator
+*/
+
+/* CORES ADOBE COLORS
+    #5FEDC9
+    #70BAA7
+    #3DCC84
+    #435450
+    #1F332E
+*/
+
+/* @import url() = importa fonts externas*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&display=swap');
+
+/* @font-face = adiciona fontes salvas localmente */
+@font-face {
+    font-family: 'IDroid';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* :root =  cria propriedades exclusivas para fonts e cores*/
+:root {
+    --cor-primaria: #5FEDC9;
+    --cor-secundaria: #70BAA7;
+    --cor-accent: #3DCC84;
+    --cor-escura: #435450;
+    --cor-mais-escura: #435450;
+
+    --fonte-principal: Arial, sans-serif, Verdana, Helvetica;
+    --fonte-secundaria: 'Beba Neue', cursive;
+    --fonte-decorativa: 'IDroid', cursive;
+}
+
+/* '*{' = seletor universal / aplica as propriedades declaradas em todos os documentos */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Estilo do corpo do documento */
+body {
+    font-family: var(--fonte-decorativa);
+    background-color: var(--cor-primaria);
+    }
+
+/* classe ligadas a <tag> link (a) com um elemento (::) colocado depois (after) */
+a.externo::after {
+    content: '\00A0\1F517';
+}
+
+/* Estilo do cabeçalho do elemento */
+header {
+    background-image: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-mais-escura));    
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    }
+
+/* Estilo do Título (h1) do cabeçalho */
+header > h1 {
+    color: white;
+    font-family: var(--cor-secundaria);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    }
+
+/* Estilo dos parágrafos (p) do cabeçalho */
+header > p {
+    font-family: var(--cor-accent);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    margin-bottom: 3px;
+    text-shadow: 2px 2px 0px black;
+    }
+
+/* Estilo do menu (nav) do elemento */
+nav {
+    background-color: var(--cor-mais-escura);
+    padding: 10px;
+    box-shadow: 0px 7px 9px black;
+}
+
+/* Estilo dos links (a) de menu do elemento */
+nav > a {
+    color: var(--cor-primaria);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: .5s;
+}
+
+/* pseudoclasse que aplica estilos a um elemento apenas quando o usuário passa o cursor do mouse sobre elev - adicionar interatividade a um site*/
+nav > a:hover {
+    background-color: #70BAA7;
+    color: #435450;
+}
+
+/* Estilo do conteúdo principal do elemento*/
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+
+/* Estilo do Título principal (h1) do conteúdo principal do elemento  */
+main h1  {
+    margin-top: 0;
+    font-family: var(--fonte-decorativa);
+    font-size: 2em;
+    text-align: center;
+    }
+
+/* Estilo do Título secundário (h2) do conteúdo principal do elemento */
+main h2 {
+    font-family: var(--fonte-decorativa);
+    color: var(--cor-escura);
+    font-size: 1.8em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor-primaria), transparent);
+    text-indent: 8px;
+    margin-top: 30px;
+    }
+
+/* Estilo dos parágrafos (p) do conteúdo principal do elemento */
+main p {
+    margin: 15px 0px 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+/* Destaque (strong) do conteúdo principal do elemento */
+main strong {
+    color: var(--cor-escura);
+    font-weight: bold;
+}
+
+/* Estilo dos links (a) do conteúdo principal do elemento */
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor-escura);
+    background-color: var(--cor-primaria);
+    padding: 2px 6px;
+}
+
+/* pseudoclasse que aplica interatividade a um site, mudando o visual de botões, links ou imagens para indicar que são clicáveis */
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor-mais-escura);
+}
+
+/* Estilos das imagens (img) do elemento */
+main img {
+    width: 100%;
+}
+
+/* Estilo da classe(.pequena) da <tag> imagem (img) */
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+/* Estilo da classe (.) vídeo */
+div.video {
+    background-color: var(--cor-mais-escura);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+/* Estilo exclusivo do elemento "iframe" da classe (.) vídeo */
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+/* Estilo do conteúdo extra */
+aside {
+    background-color: var(--cor-primaria);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+/* Estilo exclusivo da elemento lista não ordenada (ul) do conteúdo extra */
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+
+/* Estilo exclusivo do Título (h3) do conteúdo extra */
+aside > h3 {
+    background-color: var(--cor-escura);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;;
+}
+
+/* Estilo do rodapé do elemento */
+footer {
+    background-color: var(--cor-mais-escura);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 20px;
+}
+
+/* Estilo exclusivo do parágrafo (p) do rodapé */
+footer > p {
+    color: white;
+    font-weight: normal;
+    text-decoration: var(--cor-primaria);
+}
+/* Estilo que aplica interatividade nos links do rodapé */
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor-primaria);
+} 
