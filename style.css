@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* CSS document */
+
+/* 
+    Folha de estilho
+*/
+
+/*
+    em HTML é id = em CSS é # (cerquilha)
+    em HTML é class = em CSS é . (ponto)    
+    em HTML pseudoclasse = em CSS é : (dois pontos)
+    em HTML pseudoelemento = em CSS é :: (duplo dois pontos)
+    em HTML classe filha = em CSS é > (símbolo de maior)
+*/
+
+/*  SELETORS PERSONALIZADOS
+    #   = id
+    .   = class
+    :   = pseudo-class
+    ::  = pseudo-element
+    >   = child combinator
+*/
+
+@font-face {
+    font-family: 'IDroid';
+    src: url('fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'IDroid', Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 0;
+    }
+    
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    }
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    }
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: #ff6347;
+    margin: 10px auto 0;
+    }
+
+header h1:hover {
+    color: #ff6347;
+    }
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    color: #ddd;
+    margin-bottom: 50px;
+    text-align: center;
+    }
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ece7e7;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+main p {
+    text-align: justify;
+}
+
+nav ul {
+    background-color: #444;
+    list-style-type: none;
+    padding: 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;  
+    }
+
+nav ul li {
+    display: inline-flex;
+    margin: 10px;
+    }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: normal;  
+    }
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: px;
+    }
+
+h1 {
+    border: 5px solid transparent;
+    padding: 10px;
+    border-image-slice: 30;
+    border-image-repeat: round;
+    }
+
+section {
+    margin-bottom: 20px;
+    }
+
+article {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+article aside {
+    margin-top: 10px;
+    }
+
+aside {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 10px;
+    border-left: 3px solid #ccc;
+    }
+
+aside div.flex-container {
+    display: flex;
+    gap: 20px;
+    }
+
+aside div.flex-container div.box {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+    }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+    }
+
+footer p {
+    margin: 0;
+    }
+
+
